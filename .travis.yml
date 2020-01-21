@@ -13,3 +13,6 @@ script:
  - echo 'Build and check docker image'
  - docker build -t strelka2 .
  - docker images | grep -c strelka2
+ - echo 'Run test workflows'
+ - docker run -t --rm strelka2 runStrelkaGermlineWorkflowDemo.bash
+ - docker run -t --rm strelka2 runStrelkaSomaticWorkflowDemo.bash
