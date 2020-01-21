@@ -1,0 +1,15 @@
+notifications:
+  slack: wsi-t113:SRHSOd3CgFDUwFxqv8SCXuIf
+  email: false
+
+sudo: false
+
+language: ruby
+
+services:
+ - docker
+
+script:
+ - echo 'Build and check docker image'
+ - docker build -t strelka2 .
+ - docker images | grep -c strelka2
